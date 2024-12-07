@@ -13,7 +13,7 @@ class AboutScreen extends StatelessWidget {
   Future<void> _logout(BuildContext context) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     await pref.clear();
-    // After logging out, navigate to the login or home screen
+    // After logging out, navigate to the home screen
     AutoRouter.of(context).push(const HomeRoute());
   }
 
@@ -35,9 +35,18 @@ class AboutScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20.0),
-        child: GlobalButtons(), // Your custom buttons/widget here
+      body: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Center(
+                child: Text('Information About the App...'), // Content for the About screen
+              ),
+            ),
+          ),
+          const GlobalButtons(), // Global buttons at the bottom
+        ],
       ),
     );
   }

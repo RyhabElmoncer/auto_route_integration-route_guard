@@ -16,7 +16,6 @@ class ProfileScreen extends StatelessWidget {
     // After logging out, navigate to the login or home screen
     AutoRouter.of(context).push(const HomeRoute());
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,9 +34,18 @@ class ProfileScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20.0),
-        child: GlobalButtons(), // Your custom buttons/widget here
+      body: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Center(
+                child: Text('Information profil the App...'), // Content for the About screen
+              ),
+            ),
+          ),
+          const GlobalButtons(), // Global buttons at the bottom
+        ],
       ),
     );
   }

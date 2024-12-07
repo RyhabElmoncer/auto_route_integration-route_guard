@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../routes/app_router.gr.dart';
-import '../screen/home_screen.dart';
 
 class GlobalButtons extends StatefulWidget {
-  const GlobalButtons({super.key});
+  const GlobalButtons({Key? key}) : super(key: key);
 
   @override
   _GlobalButtonsState createState() => _GlobalButtonsState();
@@ -36,33 +34,27 @@ class _GlobalButtonsState extends State<GlobalButtons> {
     }
   }
 
-  // Function to handle logout
-
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('Current Index: $_currentIndex', style: TextStyle(fontSize: 24)),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: _onItemTapped,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.info),
-            label: 'About',
-          ),
-        ],
-      ),
+    return BottomNavigationBar(
+      currentIndex: _currentIndex,
+      onTap: _onItemTapped,
+      selectedItemColor: Colors.grey, // Adjust this color for the selected icon
+      unselectedItemColor: Colors.grey, // Color for non-selected items
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: 'Profile',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.info),
+          label: 'About',
+        ),
+      ],
     );
   }
 }
