@@ -7,8 +7,10 @@ import 'guard/auth_guard.dart';
 class AppRouter extends $AppRouter {
   @override
   List<AutoRoute> get routes => [
+
+    AutoRoute(page: SplashRoute.page, initial: true),
         /// Initial Route
-        AutoRoute(page: HomeRoute.page, initial: true),
+        AutoRoute(page: HomeRoute.page),
 
         /// Login Route
         AutoRoute(page: LoginRoute.page),
