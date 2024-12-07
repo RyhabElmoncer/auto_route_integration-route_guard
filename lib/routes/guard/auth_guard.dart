@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../app_router.gr.dart';
 
 
-
+import '../app_router.gr.dart'; // Ensure the path is correct
 class AuthGuard extends AutoRouteGuard {
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) async {
